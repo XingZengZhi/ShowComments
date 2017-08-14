@@ -1,7 +1,11 @@
+*{
+  margin:0;
+  padding:0;
+}
 .comments{
   display: block;
   width:1000px;
-  height:200px;
+  height:90px;
   border:1px solid #ccc;
   position:absolute;
   left:0;
@@ -10,12 +14,25 @@
   bottom:0;
   margin:auto;
   box-shadow:0 0 10px #ccc;
-  /*text-align:justify;*/
 }
-.comments-item{
+.commentsItem{
   display:inline-block;
   width:320px;
   height:80px;
   margin:5px;
   border-bottom:1px solid #ccc;
+}
+.commentsItem > img{
+  display: inline-block;
+  width:80px;
+  height:80px;
+  float:left;
+}
+.commentsItem > p{
+  display:inline-block;
+  width:240px;
+  height:80px;
+  padding-left:3px;
+  box-sizing:border-box;
+  float:left;
 }

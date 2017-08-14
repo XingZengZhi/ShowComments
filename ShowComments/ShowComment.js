@@ -2,6 +2,8 @@
   $.fn.ShowComment = function(options){
     var defaults = {
       //参数和属性
+      currentClass:"comments",
+      itemClass:"commentsItem"
     }
 
     var options = $.extend(defaults, options);

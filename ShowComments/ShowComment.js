@@ -22,20 +22,22 @@
         j++;
         if(j > nums.length){
           clearTimeout(time);
+          m = nums.length - 1; //重置计数器
           bottomTime = setTimeout(bottomMove, 1000);
         }else{
           time = setTimeout(topMove, 1000);
         }
       }
       m = nums.length - 1;
-      function bottomMove(e){
-        console.log($(this).height());
+      function bottomMove(){
         _this.find(options.itemClass + ":eq(" + m + ")").animate({
-          marginTop:$(options.itemClass).height() + 10 + 'px'
+          marginTop:-$(options.itemClass).height() + 'px'
         });
         m--;
         if(m < 0){
           clearTimeout(bottomTime);
+          j = 0; //重置计数器
+          time = setTimeout(topMove, 1000);
         }else{
           bottomTime = setTimeout(bottomMove, 1000);
         }

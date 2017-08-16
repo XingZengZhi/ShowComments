@@ -33,7 +33,7 @@
       // m = nums.length - 1;
       function bottomMove(){
         _this.find(options.itemClass + ":eq(" + m + ")").animate({
-          marginTop:-$(options.itemClass).height() + 'px'
+          marginTop:-($(options.itemClass).height() + 5) + 'px'
         });
         m--;
         if(m < 0){

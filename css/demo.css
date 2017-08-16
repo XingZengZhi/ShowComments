@@ -4,7 +4,7 @@
 }
 .comments{
   display: block;
-  width:1000px;
+  width:985px;
   height:90px;
   border:1px solid #ccc;
   position:absolute;
@@ -21,7 +21,7 @@
   width:320px;
   height:80px;
   float:left;
-  margin-top:-80px;
+  margin-top:-85px;
   margin-left:5px;
   border-bottom:1px solid #ccc;
 }

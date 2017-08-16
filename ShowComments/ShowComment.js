@@ -13,8 +13,10 @@
       $.each(_this.find(options.itemClass), function(i, n){
         nums[i] = i;
       });
-      var time = setTimeout(topMove, 1000), j = 0, m;
-      var bottomTime;
+      var time = setTimeout(topMove, 1000),
+          j = 0,
+          m = nums.length - 1,
+          bottomTime;
       function topMove(){
         _this.find(options.itemClass + ":eq(" + j + ")").animate({
           marginTop:5 + 'px'
@@ -28,7 +30,7 @@
           time = setTimeout(topMove, 1000);
         }
       }
-      m = nums.length - 1;
+      // m = nums.length - 1;
       function bottomMove(){
         _this.find(options.itemClass + ":eq(" + m + ")").animate({
           marginTop:-$(options.itemClass).height() + 'px'

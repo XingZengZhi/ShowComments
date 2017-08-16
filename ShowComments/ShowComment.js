@@ -31,7 +31,7 @@
       function bottomMove(e){
         console.log($(this).height());
         _this.find(options.itemClass + ":eq(" + m + ")").animate({
-          marginTop:-($(options.itemClass).height() + 5) + 'px'
+          marginTop:$(options.itemClass).height() + 10 + 'px'
         });
         m--;
         if(m < 0){

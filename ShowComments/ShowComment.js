@@ -13,16 +13,31 @@
       $.each(_this.find(options.itemClass), function(i, n){
         nums[i] = i;
       });
-      var time = setTimeout(topMove, 1000), j = 0;
+      var time = setTimeout(topMove, 1000), j = 0, m;
+      var bottomTime;
       function topMove(){
         _this.find(options.itemClass + ":eq(" + j + ")").animate({
-          marginTop:0 + 'px'
+          marginTop:5 + 'px'
         });
         j++;
         if(j > nums.length){
           clearTimeout(time);
+          bottomTime = setTimeout(bottomMove, 1000);
         }else{
           time = setTimeout(topMove, 1000);
+        }
+      }
+      m = nums.length - 1;
+      function bottomMove(e){
+        console.log($(this).height());
+        _this.find(options.itemClass + ":eq(" + m + ")").animate({
+          marginTop:-($(options.itemClass).height() + 5) + 'px'
+        });
+        m--;
+        if(m < 0){
+          clearTimeout(bottomTime);
+        }else{
+          bottomTime = setTimeout(bottomMove, 1000);
         }
       }
     });

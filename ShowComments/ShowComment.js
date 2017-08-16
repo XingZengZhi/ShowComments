@@ -17,6 +17,16 @@
           j = 0,
           m = nums.length - 1,
           bottomTime;
+      _this.find(options.itemClass).mouseenter(function(){
+          if(time){
+            clearTimeout(time);
+          }
+          if(bottomTime){
+            clearTimeout(bottomTime);
+          }
+      }).mouseleave(function(){
+          time = setTimeout(topMove, 1000);
+      });
       function topMove(){
         _this.find(options.itemClass + ":eq(" + j + ")").animate({
           marginTop:5 + 'px'
